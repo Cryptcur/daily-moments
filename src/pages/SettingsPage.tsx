@@ -1,4 +1,5 @@
 import {
+  IonButton,
   IonContent,
   IonHeader,
   IonPage,
@@ -6,6 +7,7 @@ import {
   IonToolbar
 } from "@ionic/react";
 import React from "react";
+import { auth } from "../firebase";
 
 const SettingsPage: React.FC = () => {
   return (
@@ -15,7 +17,11 @@ const SettingsPage: React.FC = () => {
           <IonTitle>Settings</IonTitle>
         </IonToolbar>
       </IonHeader>
-      <IonContent className="ion-padding">This is the settings page</IonContent>
+      <IonContent className="ion-padding">
+        <IonButton color="medium" expand="block" onClick={() => auth.signOut()}>
+          Log Out
+        </IonButton>
+      </IonContent>
     </IonPage>
   );
 };
