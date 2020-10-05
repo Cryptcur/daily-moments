@@ -64,9 +64,12 @@ const RegisterPage: React.FC = () => {
             />
           </IonItem>
         </IonList>
-        {status.error && <IonText color="danger">Invalid credentials</IonText>}
+        {status.error && <IonText color="danger">Registration failed</IonText>}
         <IonButton expand="block" onClick={handleRegister}>
           Create Account
+        </IonButton>
+        <IonButton expand="block" routerLink="/login" fill="clear">
+          Already have an account?
         </IonButton>
         <IonLoading isOpen={status.loading} />
       </IonContent>

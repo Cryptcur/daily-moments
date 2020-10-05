@@ -68,6 +68,9 @@ const LoginPage: React.FC = () => {
         <IonButton expand="block" onClick={handleLogin}>
           Login
         </IonButton>
+        <IonButton expand="block" routerLink="/register" fill="clear">
+          Don't have an account?
+        </IonButton>
         <IonLoading isOpen={status.loading} />
       </IonContent>
     </IonPage>
