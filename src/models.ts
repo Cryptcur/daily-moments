@@ -2,6 +2,7 @@ export interface Entry {
   id: string;
   title: string;
   description: string;
+  date: string;
 }
 
 export const toEntry = (doc: firebase.firestore.DocumentSnapshot): Entry => {
