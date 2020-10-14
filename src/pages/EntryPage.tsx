@@ -36,7 +36,6 @@ const EntryPage: React.FC = () => {
       setEntry(toEntry(doc));
     });
   }, [userId, id]);
-  console.log("ENTRYPAGE");
 
   const handleDelete = async () => {
     const entryRef = firestore
@@ -61,12 +60,12 @@ const EntryPage: React.FC = () => {
               <IonIcon icon={trachIcon} slot="icon-only" />
             </IonButton>
           </IonButtons>
-          <IonTitle>{entry?.title}</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent className="ion-padding">
         <h2>{entry?.title}</h2>
-        <h2>{entry?.description}</h2>
+        <img src={entry?.pictureUrl} alt={entry?.title} />
+        <p>{entry?.description}</p>
       </IonContent>
     </IonPage>
   );

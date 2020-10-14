@@ -9,7 +9,9 @@ import {
   IonFab,
   IonFabButton,
   IonIcon,
-  IonLabel
+  IonLabel,
+  IonThumbnail,
+  IonImg
 } from "@ionic/react";
 import { add as addIcon } from "ionicons/icons";
 import React, { useEffect, useState } from "react";
@@ -35,7 +37,7 @@ const HomePage: React.FC = () => {
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>Home</IonTitle>
+          <IonTitle>New App</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent className="ion-padding">
@@ -47,6 +49,9 @@ const HomePage: React.FC = () => {
                 key={entry.id}
                 routerLink={`/my/entries/view/${entry.id}`}
               >
+                <IonThumbnail slot="end">
+                  <IonImg src={entry.pictureUrl} />
+                </IonThumbnail>
                 <IonLabel>
                   <h2>{formatDate(entry.date)}</h2>
                   <h3>{entry.title}</h3>
